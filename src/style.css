@@ -1,0 +1,308 @@
+:root {
+  --ink: #1a1a1a;
+  --gray: #4a4a4a;
+  --light-gray: #6e6e6e;
+  --rule: #d9d9d9;
+  --accent: #1f4e5f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #eceff1;
+}
+
+body {
+  font-family: "Calibri", "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  font-size: 11.3px;
+  line-height: 1.45;
+}
+
+.page {
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  margin: 24px auto;
+  padding: 0.55in 0.65in;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+}
+
+.role-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.contact-line {
+  margin-top: 7px;
+  font-size: 10.3px;
+  color: var(--gray);
+}
+
+.contact-line a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.contact-line span.sep {
+  color: var(--rule);
+  margin: 0 6px;
+}
+
+hr.header-rule {
+  border: none;
+  border-top: 1.5px solid var(--ink);
+  margin-top: 10px;
+}
+
+/* Sections */
+section {
+  margin-top: 13px;
+}
+
+h2 {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p.summary {
+  color: var(--gray);
+  text-align: justify;
+}
+
+/* Skills */
+table.skills-grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.skills-grid td {
+  padding: 3px 0;
+  vertical-align: top;
+}
+
+.skills-grid td.skill-cat {
+  font-weight: 700;
+  color: var(--ink);
+  width: 175px;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+
+.skills-grid td.skill-val {
+  color: var(--gray);
+}
+
+/* Items (projects / education / certs) */
+.item {
+  margin-bottom: 9px;
+}
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.item-title {
+  font-weight: 700;
+  font-size: 11.6px;
+  color: var(--ink);
+}
+
+.item-date {
+  font-size: 10.3px;
+  color: var(--light-gray);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.item-sub {
+  font-size: 10.6px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.item-link {
+  font-size: 10px;
+  color: var(--light-gray);
+  text-decoration: none;
+  font-family: "Consolas", monospace;
+}
+
+ul.bullets {
+  list-style-type: disc;
+  margin-left: 16px;
+  margin-top: 3px;
+}
+
+ul.bullets li {
+  margin-bottom: 2px;
+  font-size: 10.8px;
+  color: var(--gray);
+}
+
+/* Two-column layout for lower sections to keep to one page */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+}
+
+.inline-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.inline-list li {
+  font-size: 10.8px;
+  color: var(--gray);
+  margin-bottom: 3px;
+}
+
+.inline-list li strong {
+  color: var(--ink);
+}
+
+/* ===================== PRINT ===================== */
+@media print {
+  html,
+  body {
+    background: #fff;
+    width: 8.5in;
+    height: 11in;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 10.4px;
+    line-height: 1.32;
+  }
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    padding: 0.32in 0.5in;
+    width: 8.5in;
+    min-height: 11in;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  /* Header */
+  header {
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .role-title {
+    font-size: 11px;
+    margin-top: 1px;
+  }
+  .contact-line {
+    font-size: 9.6px;
+    margin-top: 5px;
+  }
+  hr.header-rule {
+    margin-top: 7px;
+  }
+
+  /* Sections */
+  section {
+    margin-top: 8px;
+  }
+  h2 {
+    font-size: 10.6px;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  p.summary {
+    font-size: 10.2px;
+  }
+
+  /* Skills */
+  table.skills-grid {
+    font-size: 10px;
+  }
+  .skills-grid td {
+    padding: 2px 0;
+  }
+  .skills-grid td.skill-cat {
+    width: 160px;
+    padding-right: 10px;
+  }
+
+  /* Items */
+  .item {
+    margin-bottom: 6px;
+  }
+  .item-title {
+    font-size: 10.6px;
+  }
+  .item-sub {
+    font-size: 9.8px;
+  }
+  .item-date,
+  .item-link {
+    font-size: 9.4px;
+  }
+
+  ul.bullets {
+    margin-left: 14px;
+    margin-top: 2px;
+  }
+  ul.bullets li {
+    font-size: 10px;
+    margin-bottom: 1px;
+  }
+  .inline-list li {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .two-col {
+    column-gap: 18px;
+  }
+}
