@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohmmad Alsheikh</title>
+    <style>
+      :root {
+        --ink: #1a1a1a;
+        --gray: #4a4a4a;
+        --light-gray: #6e6e6e;
+        --rule: #d9d9d9;
+        --accent: #1f4e5f;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background: #eceff1;
+      }
+
+      body {
+        font-family: "Calibri", "Segoe UI", Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        font-size: 11.3px;
+        line-height: 1.45;
+      }
+
+      .page {
+        background: #ffffff;
+        width: 8.5in;
+        min-height: 11in;
+        margin: 24px auto;
+        padding: 0.55in 0.65in;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 23px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: var(--ink);
+      }
+
+      .role-title {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 2px;
+      }
+
+      .contact-line {
+        margin-top: 7px;
+        font-size: 10.3px;
+        color: var(--gray);
+      }
+
+      .contact-line a {
+        color: var(--gray);
+        text-decoration: none;
+      }
+
+      .contact-line span.sep {
+        color: var(--rule);
+        margin: 0 6px;
+      }
+
+      hr.header-rule {
+        border: none;
+        border-top: 1.5px solid var(--ink);
+        margin-top: 10px;
+      }
+
+      /* Sections */
+      section {
+        margin-top: 13px;
+      }
+
+      h2 {
+        font-size: 11.5px;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--accent);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 3px;
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
+
+      p.summary {
+        color: var(--gray);
+        text-align: justify;
+      }
+
+      /* Skills */
+      table.skills-grid {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+
+      .skills-grid td {
+        padding: 3px 0;
+        vertical-align: top;
+      }
+
+      .skills-grid td.skill-cat {
+        font-weight: 700;
+        color: var(--ink);
+        width: 175px;
+        white-space: nowrap;
+        padding-right: 12px;
+      }
+
+      .skills-grid td.skill-val {
+        color: var(--gray);
+      }
+
+      /* Items (projects / education / certs) */
+      .item {
+        margin-bottom: 9px;
+      }
+      .item:last-child {
+        margin-bottom: 0;
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+
+      .item-title {
+        font-weight: 700;
+        font-size: 11.6px;
+        color: var(--ink);
+      }
+
+      .item-date {
+        font-size: 10.3px;
+        color: var(--light-gray);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .item-sub {
+        font-size: 10.6px;
+        color: var(--accent);
+        font-weight: 600;
+        margin-top: 1px;
+      }
+
+      .item-link {
+        font-size: 10px;
+        color: var(--light-gray);
+        text-decoration: none;
+        font-family: "Consolas", monospace;
+      }
+
+      ul.bullets {
+        list-style-type: disc;
+        margin-left: 16px;
+        margin-top: 3px;
+      }
+
+      ul.bullets li {
+        margin-bottom: 2px;
+        font-size: 10.8px;
+        color: var(--gray);
+      }
+
+      /* Two-column layout for lower sections to keep to one page */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+      }
+
+      .inline-list {
+        list-style: none;
+        margin-left: 0;
+      }
+
+      .inline-list li {
+        font-size: 10.8px;
+        color: var(--gray);
+        margin-bottom: 3px;
+      }
+
+      .inline-list li strong {
+        color: var(--ink);
+      }
+
+      /* ===================== PRINT ===================== */
+      @media print {
+        html,
+        body {
+          background: #fff;
+          width: 8.5in;
+          height: 11in;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        body {
+          font-size: 10.4px;
+          line-height: 1.32;
+        }
+
+        .page {
+          box-shadow: none;
+          margin: 0;
+          padding: 0.32in 0.5in;
+          width: 8.5in;
+          min-height: 11in;
+          page-break-inside: avoid;
+          page-break-after: avoid;
+        }
+
+        @page {
+          size: Letter;
+          margin: 0;
+        }
+
+        /* Header */
+        header {
+          margin-bottom: 8px;
+        }
+        h1 {
+          font-size: 20px;
+        }
+        .role-title {
+          font-size: 11px;
+          margin-top: 1px;
+        }
+        .contact-line {
+          font-size: 9.6px;
+          margin-top: 5px;
+        }
+        hr.header-rule {
+          margin-top: 7px;
+        }
+
+        /* Sections */
+        section {
+          margin-top: 8px;
+        }
+        h2 {
+          font-size: 10.6px;
+          padding-bottom: 2px;
+          margin-bottom: 4px;
+          letter-spacing: 1px;
+        }
+        p.summary {
+          font-size: 10.2px;
+        }
+
+        /* Skills */
+        table.skills-grid {
+          font-size: 10px;
+        }
+        .skills-grid td {
+          padding: 2px 0;
+        }
+        .skills-grid td.skill-cat {
+          width: 160px;
+          padding-right: 10px;
+        }
+
+        /* Items */
+        .item {
+          margin-bottom: 6px;
+        }
+        .item-title {
+          font-size: 10.6px;
+        }
+        .item-sub {
+          font-size: 9.8px;
+        }
+        .item-date,
+        .item-link {
+          font-size: 9.4px;
+        }
+
+        ul.bullets {
+          margin-left: 14px;
+          margin-top: 2px;
+        }
+        ul.bullets li {
+          font-size: 10px;
+          margin-bottom: 1px;
+        }
+        .inline-list li {
+          font-size: 10px;
+          margin-bottom: 2px;
+        }
+
+        .two-col {
+          column-gap: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <header>
+        <h1>MOHMMAD ALSHEIKH</h1>
+        <div class="role-title">.NET Back-End Developer</div>
+        <div class="contact-line">
+          Al-Kiswah, Rif Dimashq, Syria<span class="sep">|</span>+963
+          997102470<span class="sep">|</span
+          ><a href="mailto:veb2018s@gmail.com">veb2018s@gmail.com</a><br />
+          <a href="https://github.com/mohmmad-alshiekh"
+            >github.com/mohmmad-alshiekh</a
+          ><span class="sep">|</span
+          ><a href="https://www.linkedin.com/in/mohmmad-alsheikh/"
+            >linkedin.com/in/mohmmad-alsheikh</a
+          ><span class="sep">|</span
+          ><a href="https://codeforces.com/profile/mo.sheikh"
+            >codeforces.com/mo.sheikh</a
+          ><span class="sep">|</span
+          ><a href="https://icpc.global/ICPCID/VGUX5H9NIHZ3"
+            >ICPC: VGUX5H9NIHZ3</a
+          >
+        </div>
+        <hr class="header-rule" />
+      </header>
+
+      <!-- Professional Summary -->
+      <section>
+        <h2>Professional Summary</h2>
+        <p class="summary">
+          Results-driven Software Engineering student specializing in .NET
+          back-end development, with hands-on experience designing and building
+          RESTful Web APIs, relational databases, and secure, scalable
+          application architectures using C#, ASP.NET Core, and SQL Server.
+          Skilled in object-oriented design, 3-tier architecture, and query
+          optimization, with a strong analytical foundation developed through
+          C++ programming and national-level competitive programming contests.
+          Committed to writing clean, maintainable code and continuously
+          expanding expertise in modern back-end engineering practices.
+        </p>
+      </section>
+
+      <!-- Technical Skills -->
+      <section>
+        <h2>Technical Skills</h2>
+        <table class="skills-grid">
+          <tr>
+            <td class="skill-cat">Languages</td>
+            <td class="skill-val">C#, C++, SQL, T-SQL</td>
+          </tr>
+          <tr>
+            <td class="skill-cat">Frameworks &amp; Technologies</td>
+            <td class="skill-val">
+              .NET / .NET Core, ASP.NET Core Web API, ADO.NET, Entity Framework
+              Core (EF Core), Windows Forms
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-cat">Databases</td>
+            <td class="skill-val">
+              SQL Server, Stored Procedures, Relational Database Design, Query
+              Optimization
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-cat">Architecture &amp; Concepts</td>
+            <td class="skill-val">
+              RESTful API Design, Web API Security (JWT, Roles &amp; Policies),
+              3-Tier Architecture, Clean Architecture Foundations, OOP, Data
+              Structures &amp; Algorithms, SOLID Principles (in progress)
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-cat">Tools &amp; Practices</td>
+            <td class="skill-val">
+              Git, GitHub, Version Control, Problem Solving, Competitive
+              Programming, Agile Teamwork
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-cat">Soft Skills</td>
+            <td class="skill-val">
+              Analytical Thinking, Team Collaboration, Time Management,
+              Attention to Detail
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Key Projects -->
+      <section>
+        <h2>Key Projects</h2>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title"
+              >UniPlan &ndash; Academic Scheduling &amp; Planning System</span
+            >
+            <a class="item-link" href="https://github.com/QFM-Company/UniPlan"
+              >github.com/QFM-Company/UniPlan</a
+            >
+          </div>
+          <div class="item-sub">
+            Back-End Developer (Team) &nbsp;|&nbsp; C#, ASP.NET Core Web API,
+            ADO.NET, SQL Server
+          </div>
+          <ul class="bullets">
+            <li>
+              Co-developed a back-end Web API service that automatically
+              generates optimal, conflict-free weekly course schedules for
+              university students.
+            </li>
+            <li>
+              Architected SQL Server database schemas and stored procedures to
+              manage course capacities and deliver student-demand analytics to
+              administrators.
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title"
+              >DVLD &ndash; Driving &amp; Vehicle License Department
+              System</span
+            >
+            <a class="item-link" href="https://github.com/mohmmad-alshiekh/DVLD"
+              >github.com/mohmmad-alshiekh/DVLD</a
+            >
+          </div>
+          <div class="item-sub">
+            Desktop Developer &nbsp;|&nbsp; C#, WinForms, ADO.NET, SQL Server
+          </div>
+          <ul class="bullets">
+            <li>
+              Engineered a full-featured desktop management system built on a
+              3-Tier Architecture for clear separation of concerns.
+            </li>
+            <li>
+              Delivered core workflows including multi-stage testing (vision,
+              written, practical), license issuance and renewal, and role-based
+              user access control.
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title"
+              >Public Transport Network Management System</span
+            >
+            <span class="item-date">Academic Team Project</span>
+          </div>
+          <div class="item-sub">
+            Core Developer (Team) &nbsp;|&nbsp; C++, Custom Data Structures,
+            File Handling
+          </div>
+          <ul class="bullets">
+            <li>
+              Built a console application using custom data structures to
+              automate transport line management, bus stops, queuing, and
+              passenger ticketing.
+            </li>
+            <li>
+              Implemented file-based persistent storage and graph-based
+              algorithms to optimize shortest-route and least-cost calculations
+              between stations.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="two-col">
+        <!-- Left column: Certifications + Education -->
+        <div>
+          <section>
+            <h2>Training &amp; Certifications</h2>
+            <div class="item">
+              <div class="item-title" style="font-size: 11px">
+                Independent Study
+              </div>
+              <ul class="bullets">
+                <li>
+                  C++ Programming Fundamentals, Data Structures, and
+                  Object-Oriented Programming (OOP) &ndash; self-directed
+                  coursework.
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item-title" style="font-size: 11px">
+                Programming Advices Academy &ndash; .NET &amp; Back-End Roadmap
+              </div>
+              <div class="item-date" style="margin-bottom: 3px">
+                11 Courses Completed
+              </div>
+              <ul class="bullets">
+                <li>C# Programming &ndash; Level 1</li>
+                <li>C# Programming &ndash; Level 2</li>
+                <li>OOP As It Should Be in C#</li>
+                <li>Database Level 1 &ndash; SQL (Concepts &amp; Practice)</li>
+                <li>Database Level 2 &ndash; Concepts &amp; T-SQL</li>
+                <li>Database SQL (Projects &amp; Practice)</li>
+                <li>C# &amp; Database Connectivity (ADO.NET)</li>
+                <li>Entity Framework Core Fundamentals (EF Core)</li>
+                <li>Introduction to RESTful API</li>
+                <li>
+                  Secure Your APIs (JWT, Roles &amp; Policies in ASP.NET Core)
+                </li>
+                <li>Data Structures Level 2 in C#</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right column: Competitive Programming + Languages -->
+        <div>
+          <section>
+            <h2>Competitive Programming</h2>
+            <ul class="inline-list">
+              <li>
+                <strong>SCPC 2026</strong> &ndash; Syrian Collegiate Programming
+                Contest, Participant.
+              </li>
+              <li>
+                <strong>SYPU-CPC 2026</strong> &ndash; Syrian Private
+                Universities Competitive Programming Contest, Participant.
+              </li>
+              <li>
+                <strong>ASPU-CPC 2026</strong> &ndash; Al-Sham Private
+                University Competitive Programming Contest, Participant.
+              </li>
+              <li>
+                Active problem solver on <strong>Codeforces</strong>; verified
+                <strong>ICPC Global</strong> profile holder.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Languages</h2>
+            <ul class="inline-list">
+              <li><strong>Arabic</strong> &ndash; Native</li>
+              <li>
+                <strong>English</strong> &ndash; Intermediate (Technical Reading
+                &amp; Writing)
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Education</h2>
+            <div class="item">
+              <div class="item-header">
+                <span class="item-title" style="font-size: 11px"
+                  >B.Sc. in Software Engineering</span
+                >
+                <span class="item-date">2023 &ndash; Expected 2027</span>
+              </div>
+              <div class="item-sub" style="font-size: 10.3px">
+                Al-Sham Private University (ASPU) &ndash; Damascus, Syria
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
